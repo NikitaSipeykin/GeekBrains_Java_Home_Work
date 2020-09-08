@@ -51,11 +51,7 @@ public class Main {
             x = random.nextInt(SIZE);
             y = random.nextInt(SIZE);
         }while(!isCellValid(x,y));
-        x=x+1;  //костыли исправляющие вывод в консоль координат хода и.и.
-        y=y+1;  //костыли
-        System.out.println("Компьютер походил "+x+" и "+y);
-        x=x-1;  //костыли
-        y=y-1;  //костыли
+        System.out.println("Компьютер походил "+(x+1)+" и "+(y+1));
         map[y][x]= DOT_O;
     }
     static boolean isWinner(char symb){ //проверка победы
@@ -67,6 +63,7 @@ public class Main {
                 map[0][2] == symb && map[1][2] == symb && map[2][2] == symb||
                 map[0][0] == symb && map[1][1] == symb && map[2][2] == symb||
                 map[2][0] == symb && map[1][1] == symb && map[0][2] == symb){
+
             return true;
         }
         return false;
