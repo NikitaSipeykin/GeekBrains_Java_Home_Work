@@ -54,17 +54,22 @@ public class Main {
         System.out.println("Компьютер походил "+(x+1)+" и "+(y+1));
         map[y][x]= DOT_O;
     }
-    static boolean isWinner(char symb){ //проверка победы
-        if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb||
-                map[1][0] == symb && map[1][1] == symb && map[1][2] == symb||
-                map[2][0] == symb && map[2][1] == symb && map[2][2] == symb||
-                map[0][0] == symb && map[1][0] == symb && map[2][0] == symb||
-                map[0][1] == symb && map[1][1] == symb && map[2][1] == symb||
-                map[0][2] == symb && map[1][2] == symb && map[2][2] == symb||
-                map[0][0] == symb && map[1][1] == symb && map[2][2] == symb||
-                map[2][0] == symb && map[1][1] == symb && map[0][2] == symb){
+    static boolean isWinner(char symb){  //проверка победы
 
-            return true;
+        for (int j=0; j < 1;j++) {
+            for (int a = 0; a < SIZE; a++) {     //плавующая пременная №1
+                int i = 0; //плавующая пременная №2
+                if (map[a][i] == symb && map[a][i + 1] == symb && map[a][i + 2] == symb) {    //проверка по горизонтали
+                    return true;
+                }
+                if (map[i][a] == symb && map[i + 1][a] == symb && map[i + 2][a] == symb) {    //проверка по вертикали
+                    return true;
+                }
+            }
+            if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb||
+                    map[2][0] == symb && map[1][1] == symb && map[0][2] == symb) {    //проверка по диагонали
+                return true;
+            }
         }
         return false;
     }
