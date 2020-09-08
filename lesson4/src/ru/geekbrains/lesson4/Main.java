@@ -11,7 +11,7 @@ public class Main {
     static final char DOT_O = 'O';
     static final char DOT_EMPTY = '.';
 
-    static void initMap(){
+    static void initMap(){     //создает "чистое" игровое поле
         map = new char[SIZE][SIZE];
         for(int i = 0;i<map.length;i++){
             for (int j = 0; j < map[i].length;j++){
@@ -19,12 +19,12 @@ public class Main {
             }
         }
     }
-    static void printMap(){
-        for(int i = 0;i<= SIZE;i++){
+    static void printMap(){  //отображает в консоли массив в том состоянии в котором он находится в данный момент
+        for(int i = 0;i<= SIZE;i++){   //сетка по горизонтали
             System.out.print(i+" ");
         }
         System.out.println();
-        for (int i = 0; i < SIZE;i++){
+        for (int i = 0; i < SIZE;i++){  //проверяет нахождение в массиве и рисует строчки сетки
             System.out.print((i+1)+" ");
             for (int j = 0; j <SIZE; j++){
                 System.out.print(map[i][j]+" ");
@@ -32,7 +32,7 @@ public class Main {
             System.out.println();
         }
     }
-    static void humanTurn(){
+    static void humanTurn(){   //ход человека
         Scanner scanner = new Scanner(System.in);
         int x;
         int y;
@@ -43,7 +43,7 @@ public class Main {
         }while(!isCellValid(x,y));
         map[y][x]= DOT_X;
     }
-    static void aiTurn(){
+    static void aiTurn(){   //ход и.и.
         Random random = new Random();
         int x;
         int y;
@@ -51,61 +51,51 @@ public class Main {
             x = random.nextInt(SIZE);
             y = random.nextInt(SIZE);
         }while(!isCellValid(x,y));
+        x=x+1;  //костыли исправляющие вывод в консоль координат хода и.и.
+        y=y+1;  //костыли
         System.out.println("Компьютер походил "+x+" и "+y);
+        x=x-1;  //костыли
+        y=y-1;  //костыли
         map[y][x]= DOT_O;
     }
-    static boolean isWinner(char symb){
-        if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb){
-            return true;
-        }
-        if (map[1][0] == symb && map[1][1] == symb && map[1][2] == symb){
-            return true;
-        }
-        if (map[2][0] == symb && map[2][1] == symb && map[2][2] == symb){
-            return true;
-        }
-        if (map[0][0] == symb && map[1][0] == symb && map[2][0] == symb){
-            return true;
-        }
-        if (map[0][1] == symb && map[1][1] == symb && map[2][1] == symb){
-            return true;
-        }
-        if (map[0][2] == symb && map[1][2] == symb && map[2][2] == symb){
-            return true;
-        }
-        if (map[0][0] == symb && map[1][1] == symb && map[2][2] == symb){
-            return true;
-        }
-        if (map[2][0] == symb && map[1][1] == symb && map[0][2] == symb){
+    static boolean isWinner(char symb){ //проверка победы
+        if (map[0][0] == symb && map[0][1] == symb && map[0][2] == symb||
+                map[1][0] == symb && map[1][1] == symb && map[1][2] == symb||
+                map[2][0] == symb && map[2][1] == symb && map[2][2] == symb||
+                map[0][0] == symb && map[1][0] == symb && map[2][0] == symb||
+                map[0][1] == symb && map[1][1] == symb && map[2][1] == symb||
+                map[0][2] == symb && map[1][2] == symb && map[2][2] == symb||
+                map[0][0] == symb && map[1][1] == symb && map[2][2] == symb||
+                map[2][0] == symb && map[1][1] == symb && map[0][2] == symb){
             return true;
         }
         return false;
     }
-    static boolean isMapFull(){
+    static boolean isMapFull(){   //проверка заполнености игрового поля
         for (int i = 0;i < map.length;i++){
             for(int j=0; j< map.length;j++){
-                if( map[i][j]==DOT_EMPTY){
+                if( map[i][j]==DOT_EMPTY){  //если есть точки выводится false и игра продолжается
                     return false;
                 }
             }
         }
-        return true;
+        return true;    //в противном случае вывести true и игра окончена ничьей
     }
-    static boolean isCellValid(int x,int y){
+    static boolean isCellValid(int x,int y){  //проверка, что введен координат пустой ячейки игрового поля
         if (x < 0|| x >= SIZE||y < 0|| y >= SIZE){
             return false;
         }
-        if(map[y][x]==DOT_EMPTY){
+        if (map[y][x]==DOT_EMPTY){
             return true;
         }
         return false;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {    //игровой процесс
         initMap();
         printMap();
 
         while(true){
-            humanTurn();
+            humanTurn(); //ход человека
             printMap();
             if(isWinner(DOT_X)){
                 System.out.println("Игра окончена!");
@@ -117,9 +107,8 @@ public class Main {
                 System.out.println("Ничья");
                 break;
             }
-            aiTurn();
+            aiTurn();    //ход и.и.
             printMap();
-
             if(isWinner(DOT_O)){
                 System.out.println("Игра окончена!");
                 System.out.println("Победил T-1000!");
