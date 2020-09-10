@@ -15,6 +15,8 @@ public class Main {
 * С помощью цикла вывести информацию только о сотрудниках старше 40 лет;*/
 
     public static void main(String[] args) {
+        StaffMember member1 = new StaffMember("Vasya","Pupkin","Petrovich","Director",
+                "Vasya.p@mail.ru","8(800)555-35-35",300000,35);
 
     }
 }
