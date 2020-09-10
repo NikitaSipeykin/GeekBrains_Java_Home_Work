@@ -137,4 +137,5 @@ public class Main {
         int x = random.nextInt(9);
         return x;
     }
+
 }
