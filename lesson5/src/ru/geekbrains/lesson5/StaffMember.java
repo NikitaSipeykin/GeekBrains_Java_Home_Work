@@ -20,7 +20,11 @@ public class StaffMember {
         this.phoneNumber = phoneNumber;
         this.salary = salary;
         this.age = age;
-        printStaffMember();
+
+        if(age>40){
+            printStaffMember();
+        }
+
     }
      void printStaffMember(){
         System.out.println("Имя "+lastName+"\nФамилия "+firstName+"\nОтчество "+patronymic+"\nДолжность "+position+
