@@ -10,7 +10,7 @@ public class StaffMember {
     private int salary;
     private int age;
 
-    public StaffMember(String firstName, String lastName, String patronymic, String position, String eMail,
+    public StaffMember(String lastName, String firstName, String patronymic, String position, String eMail,
                        String phoneNumber, int salary, int age){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,7 +23,7 @@ public class StaffMember {
         printStaffMember();
     }
      void printStaffMember(){
-        System.out.println("Имя "+firstName+"\nФамилия "+lastName+"\nОтчество "+patronymic+"\nДолжность "+position+
+        System.out.println("Имя "+lastName+"\nФамилия "+firstName+"\nОтчество "+patronymic+"\nДолжность "+position+
             "\neMail "+eMail+"\nТелефон "+phoneNumber+"\nЗарплата "+salary+"\nВозраст "+age);
     }
 }
