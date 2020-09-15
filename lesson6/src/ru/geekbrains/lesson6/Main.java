@@ -17,14 +17,29 @@ public class Main {
 
     public static void main(String[] args) {
         Cat cat1 = new Cat("Kuzya");
+        Cat cat2 = new Cat("Vasyliy");
         Dog dog1 = new Dog("Sharik");
-        System.out.println(cat1.name);
-        cat1.run(1000);                       //test
+        Dog dog2 = new Dog("Janik");
+        System.out.println("Task 6");
+
+        cat1.run(200);                       //test
         cat1.swim(10);                       //test
-        cat1.jumpOverAnObstacle(3);  //test
-        dog1.run(400);                     //test
-        dog1.swim(100);                     //test
-        dog1.jumpOverAnObstacle(1);  //test
+        cat1.jumpOverAnObstacle(1f);  //test
+        System.out.println();
+
+        cat2.run(300);                       //test
+        cat2.swim(10);                       //test
+        cat2.jumpOverAnObstacle(1.8f);  //test
+        System.out.println();
+
+        dog1.run(450);                     //test
+        dog1.swim(9);                     //test
+        dog1.jumpOverAnObstacle(1.8f);  //test
+        System.out.println();
+
+        dog2.run(500);                     //test
+        dog2.swim(12);                     //test
+        dog2.jumpOverAnObstacle(0.5f);  //test
 
     }
 }

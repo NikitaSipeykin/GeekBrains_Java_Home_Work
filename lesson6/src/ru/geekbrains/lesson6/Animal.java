@@ -5,17 +5,16 @@ package ru.geekbrains.lesson6;
 
 public class Animal {
     protected String name;
-
     Animal(String name){
         this.name = name;
     }
     protected void run(int distance){
-
+        System.out.println(name+" run through "+distance+" m ");
     }
     protected void swim(int distance){
-
+        System.out.println(name+" swim through "+distance+" m ");
     }
-    protected void jumpOverAnObstacle(int heightOfTheJump){
-
+    protected void jumpOverAnObstacle(float heightOfTheJump){
+        System.out.println(name+" jump over "+heightOfTheJump+" m ");
     }
 }

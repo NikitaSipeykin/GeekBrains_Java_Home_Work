@@ -1,38 +1,53 @@
 package ru.geekbrains.lesson6;
-    //1. Создать классы Собака и Кот с наследованием от класса Животное.
+
+import java.util.Random;
+
+//1. Создать классы Собака и Кот с наследованием от класса Животное.
     //3. У каждого животного есть ограничения на действия (бег: кот 200 м., собака 500 м.; прыжок: кот 2 м.,
     //             собака 0.5 м.; плавание: кот не умеет плавать, собака 10 м.).
     //4. При попытке животного выполнить одно из этих действий, оно должно сообщить результат в консоль.
     //            (Например, dog1.run(150); -> результат: run: true)
 public class Cat extends Animal {
      Cat(String name){
-        super(name);
+         super(name);
     }
-
+    private int distanceRunLimit(){
+        Random random = new Random();
+        return random.nextInt(300 - 100) + 100;
+    }
+    private float heightOfTheJumpLimit(){
+        Random random = new Random();
+        return random.nextFloat() + 0.4f;
+    }
         @Override
         protected void run(int distance) {
-            if(distance <= 200){
+            int i = distanceRunLimit();
+            System.out.println(name+" running distance limit "+i);   // test
+            if(distance <= i){
                 super.run(distance);
-                System.out.println(name+" run through "+distance+" m ");
             }
             else {
                 System.out.println("Cat "+name+" can't run "+distance+" m ");
             }
+            System.out.println();
         }
 
         @Override
         protected void swim(int distance) {
             System.out.println("Cat "+name+" can't swim");
+            System.out.println();
         }
 
         @Override
-        protected void jumpOverAnObstacle(int heightOfTheJump) {
-            if(heightOfTheJump <= 2){
+        protected void jumpOverAnObstacle(float heightOfTheJump) {
+            float i = heightOfTheJumpLimit();
+            System.out.println(name+" jump limit "+i);   // test
+            if(heightOfTheJump <= i){
                 super.jumpOverAnObstacle(heightOfTheJump);
-                System.out.println(name+" jump over "+heightOfTheJump+" m ");
             }
             else {
                 System.out.println("Cat "+name+" can't jump "+heightOfTheJump+" m ");
             }
+            System.out.println();
         }
     }
