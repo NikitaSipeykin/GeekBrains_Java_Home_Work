@@ -13,6 +13,7 @@ public class Cat extends Animal {
         protected void run(int distance) {
             if(distance <= 200){
                 super.run(distance);
+                System.out.println(name+" run through "+distance+" m ");
             }
             else {
                 System.out.println("Cat "+name+" can't run "+distance+" m ");
@@ -28,6 +29,7 @@ public class Cat extends Animal {
         protected void jumpOverAnObstacle(int heightOfTheJump) {
             if(heightOfTheJump <= 2){
                 super.jumpOverAnObstacle(heightOfTheJump);
+                System.out.println(name+" jump over "+heightOfTheJump+" m ");
             }
             else {
                 System.out.println("Cat "+name+" can't jump "+heightOfTheJump+" m ");

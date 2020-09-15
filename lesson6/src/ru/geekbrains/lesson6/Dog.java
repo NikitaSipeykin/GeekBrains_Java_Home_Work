@@ -8,31 +8,31 @@ public class Dog extends Animal {
         Dog(String name){
             super(name);
         }
-
         @Override
         protected void run(int distance) {
             if(distance <= 500){
                 super.run(distance);
+                System.out.println(name+" run through "+distance+" m ");
             }
             else {
                 System.out.println("Dog "+name+" can't run "+distance+" m ");
             }
         }
-
         @Override
         protected void swim(int distance) {
             if(distance <= 10){
                 super.swim(distance);
+                System.out.println(name+" swim through "+distance+" m ");
             }
             else {
                 System.out.println("Dog "+name+" can't swim "+distance+" m ");
             }
         }
-
         @Override
         protected void jumpOverAnObstacle(int heightOfTheJump) {
             if(heightOfTheJump <= 0.5){
                 super.jumpOverAnObstacle(heightOfTheJump);
+                System.out.println(name+" jump over "+heightOfTheJump+" m ");
             }
             else {
                 System.out.println("Dog "+name+" can't jump "+heightOfTheJump+" m ");
