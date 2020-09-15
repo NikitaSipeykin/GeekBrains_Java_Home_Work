@@ -10,12 +10,12 @@ public class Animal {
         this.name = name;
     }
     protected void run(int distance){
-        System.out.println(name+" run through "+distance);
+        System.out.println(name+" run through "+distance+" m ");
     }
     protected void swim(int distance){
-        System.out.println(name+" swim through "+distance);
+        System.out.println(name+" swim through "+distance+" m ");
     }
     protected void jumpOverAnObstacle(int heightOfTheJump){
-        System.out.println(name+" jump over "+heightOfTheJump);
+        System.out.println(name+" jump over "+heightOfTheJump+" m ");
     }
 }

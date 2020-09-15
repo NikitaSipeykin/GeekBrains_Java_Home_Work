@@ -19,6 +19,12 @@ public class Main {
         Cat cat1 = new Cat("Kuzya");
         Dog dog1 = new Dog("Sharik");
         System.out.println(cat1.name);
-        cat1.run(10);
+        cat1.run(1000);                       //test
+        cat1.swim(10);                       //test
+        cat1.jumpOverAnObstacle(3);  //test
+        dog1.run(400);                     //test
+        dog1.swim(100);                     //test
+        dog1.jumpOverAnObstacle(1);  //test
+
     }
 }
