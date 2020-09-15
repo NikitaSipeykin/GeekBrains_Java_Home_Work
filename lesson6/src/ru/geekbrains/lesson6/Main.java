@@ -16,6 +16,9 @@ public class Main {
              у другой 600 м.*/
 
     public static void main(String[] args) {
-
+        Cat cat1 = new Cat("Kuzya");
+        Dog dog1 = new Dog("Sharik");
+        System.out.println(cat1.name);
+        cat1.run(10);
     }
 }
