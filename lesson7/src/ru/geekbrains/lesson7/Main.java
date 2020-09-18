@@ -9,10 +9,15 @@ public class Main {
 //    6. Добавить в тарелку метод, с помощью которого можно было бы добавлять еду в тарелку
 
     public static void main(String[] args) {
-        Plate plate = new Plate(5);
+        Plate plate = new Plate(0);
         Cat cat1 = new Cat("Barsik", 15);
-        plate.info();
-        cat1.eat(plate);
-        plate.info();
+        Cat cat2 = new Cat("Kuzya", 20);
+        Cat cat3 = new Cat("Murka", 10);
+        Cat cat4 = new Cat("Pushok", 30);
+        Cat cat5 = new Cat("Murzik", 13);
+        Cat[] cats = {cat1, cat2, cat3, cat4,cat5};
+        for(int i = 0;i<cats.length;i++){
+            cats[i].eat(plate);
+        }
     }
 }

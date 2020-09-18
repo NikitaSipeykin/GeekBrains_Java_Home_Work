@@ -5,13 +5,12 @@ package ru.geekbrains.lesson7;
 import java.util.Scanner;
 
 public class Plate {
-    private int food;
+    protected int food;
     public Plate(int food) {
         this.food = food;
     }
     public boolean decreaseFood(int n) {
-        feedingTime();
-        if(food>n){
+        if(food>=n){
             food -= n;
             return true;
         }
@@ -22,12 +21,9 @@ public class Plate {
     public void info() {
         System.out.println("plate: " + food);
     }
-    private void feedingTime(){
-        if(food<10){
-            info();
+    protected void feedingTime(){
             Scanner scanner = new Scanner(System.in);
             System.out.println("The plate were almost empty!\nHow much to put in a plate of food?");
             food += scanner.nextInt();
-        }
     }
 }

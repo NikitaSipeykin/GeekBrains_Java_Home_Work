@@ -11,12 +11,27 @@ public class Cat {
         this.appetite = appetite;
     }
     public void eat(Plate p) {
-        boolean satiety = p.decreaseFood(appetite);
+        System.out.println(name+" want to eat!");
+        if(p.food<appetite){
+            System.out.println(name+" meow");
+            p.info();
+            p.feedingTime();
+            boolean satiety = p.decreaseFood(appetite);
+            satiety(satiety);
+        }
+        else {
+            boolean satiety = p.decreaseFood(appetite);
+            satiety(satiety);
+        }
+    }
+    private boolean satiety(boolean satiety){
         if(satiety == true){
             System.out.println(name+" is full");
+            return true;
         }
         else {
             System.out.println(name+" is hungry");
+            return false;
         }
     }
 }
