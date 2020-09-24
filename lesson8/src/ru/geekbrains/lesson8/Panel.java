@@ -73,9 +73,46 @@ public class Panel extends JPanel {
         ActionListener l = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JButton b = (JButton) e.getSource();
-                display.setText(display.getText()+b.getText());
-
+                if(e.getSource() == numbers[0]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[1]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[2]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[3]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[4]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[5]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[6]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[7]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[8]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
+                if(e.getSource() == numbers[9]){
+                    JButton b = (JButton) e.getSource();
+                    display.setText(display.getText()+b.getText());
+                }
                 if(e.getSource() == backspace){
                     display.setText(null);
                 }
@@ -148,8 +185,6 @@ public class Panel extends JPanel {
         multiply.addActionListener(l);
         divide.addActionListener(l);
         equ.addActionListener(l);
-
-
 
         addKeyListener(new KeyAdapter() {
             @Override
