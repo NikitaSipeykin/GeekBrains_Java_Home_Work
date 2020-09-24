@@ -11,7 +11,7 @@ public class Panel extends JPanel {
 
     private JButton numbers[] = new JButton[10];
     private Font font = new Font("SanSerif",Font.BOLD,20);
-    private JTextField output = new JTextField();
+    private JTextField display = new JTextField();
     private JButton backspace = new JButton("C");
     private JButton equ = new JButton("=");
     private JButton plus = new JButton("+");
@@ -19,6 +19,9 @@ public class Panel extends JPanel {
     private JButton multiply = new JButton("*");
     private JButton divide = new JButton("/");
 
+    int SUM = 0, DIF = 0, MUT = 0, DIV = 0;
+    String j, h;
+    int a, c;
 
     public Panel(){
         setLayout(null);
@@ -62,21 +65,91 @@ public class Panel extends JPanel {
                 add(numbers[x * 3 + y +1]);
             }
         }
-        output.setBounds(10,10,230,50);
-        output.setFont(font);
-        output.setEditable(false);
-        add(output);
+        display.setBounds(10,10,230,50);
+        display.setFont(font);
+        display.setEditable(false);
+        add(display);
 
         ActionListener l = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JButton b = (JButton) e.getSource();
-                output.setText(output.getText()+b.getText());
+                display.setText(display.getText()+b.getText());
+
+                if(e.getSource() == backspace){
+                    display.setText(null);
+                }
+                if(e.getSource() == plus){
+                    j = display.getText();
+                    display.setText(null);
+                    SUM++;
+                }
+                if(e.getSource() == minus){
+                    j = display.getText();
+                    display.setText(null);
+                    DIF++;
+                }
+                if(e.getSource() == multiply){
+                    j = display.getText();
+                    display.setText(null);
+                    MUT++;
+                }
+                if(e.getSource() == divide){
+                    j = display.getText();
+                    display.setText(null);
+                    DIV++;
+                }
+                if(e.getSource() == equ){
+                    h = display.getText();
+                    c = Integer.parseInt(h);
+                    a = Integer.parseInt(j);
+
+                    if(SUM == 1){
+                        display.setText(a + c +"");
+                        SUM = 0;
+                        a = 0;
+                        c = 0;
+                        h = "";
+                        j = "";
+                    }
+                    if(DIF == 1){
+                        display.setText(a - c +"");
+                        SUM = 0;
+                        a = 0;
+                        c = 0;
+                        h = "";
+                        j = "";
+                    }
+                    if(MUT == 1){
+                        display.setText(a * c +"");
+                        SUM = 0;
+                        a = 0;
+                        c = 0;
+                        h = "";
+                        j = "";
+                    }
+                    if(DIV == 1){
+                        display.setText(a / c +"");
+                        SUM = 0;
+                        a = 0;
+                        c = 0;
+                        h = "";
+                        j = "";
+                    }
+                }
             }
         };
         for(JButton b : numbers){
             b.addActionListener(l);
         }
+        backspace.addActionListener(l);
+        plus.addActionListener(l);
+        minus.addActionListener(l);
+        multiply.addActionListener(l);
+        divide.addActionListener(l);
+        equ.addActionListener(l);
+
+
 
         addKeyListener(new KeyAdapter() {
             @Override
@@ -86,7 +159,7 @@ public class Panel extends JPanel {
                 if(!Character.isDigit(symbol)){
                     return;
                 }
-                    output.setText(output.getText()+symbol);
+                display.setText(display.getText()+symbol);
             }
         });
     }

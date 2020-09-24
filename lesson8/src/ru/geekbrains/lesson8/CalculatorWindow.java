@@ -11,6 +11,5 @@ public class CalculatorWindow extends JFrame {
         add(new Panel());
         setResizable(false);
         setVisible(true);
-
     }
 }
