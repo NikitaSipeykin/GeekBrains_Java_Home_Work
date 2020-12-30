@@ -70,5 +70,9 @@ public class Main {
 
         System.out.println("Average salary in office: " +averageSalary(office));
         System.out.println("Average age in office: " +averageAge(office));
+
+        for (int i = 0; i < office.length; i++) {
+            System.out.println(office[i].getId());
+        }
     }
 }

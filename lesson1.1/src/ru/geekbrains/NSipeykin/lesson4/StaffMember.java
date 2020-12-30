@@ -4,12 +4,15 @@ public class StaffMember {
     private String name;
     private int salary;
     private int age;
+    private static int id = 0;
+    public int uid;
 
     public StaffMember(String name, int salary, int age){
-        int id;
+
         this.name = name;
         this.salary = salary;
         this.age = age;
+        this.uid = id++;
     }
 
     String getName(){
@@ -24,12 +27,16 @@ public class StaffMember {
         return age;
     }
 
+    int getId(){
+        return uid;
+    }
+
     String getNameAndAge(){
         return String.format("name: "+getName()+"; age: "+getAge()+";");
     }
 
     String getInfo(){
-        return String.format("name: "+getName()+"; Salary: "+getSalary()+ "; age: "+getAge()+";");
+        return String.format("id: "+getId()+"; name: "+getName()+"; Salary: "+getSalary()+ "; age: "+getAge()+";");
     }
 
     void payRise(int value){
