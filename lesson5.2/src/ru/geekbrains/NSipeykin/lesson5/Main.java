@@ -1,5 +1,13 @@
 package ru.geekbrains.NSipeykin.lesson5;
 
+import ru.geekbrains.NSipeykin.lesson5.animals.Animals;
+import ru.geekbrains.NSipeykin.lesson5.animals.Cat;
+import ru.geekbrains.NSipeykin.lesson5.animals.Dog;
+import ru.geekbrains.NSipeykin.lesson5.obstacle.Distance;
+import ru.geekbrains.NSipeykin.lesson5.obstacle.Obstacle;
+import ru.geekbrains.NSipeykin.lesson5.obstacle.Pool;
+import ru.geekbrains.NSipeykin.lesson5.obstacle.Wall;
+
 public class Main {
 
 //TODO: 1
@@ -18,6 +26,20 @@ public class Main {
 //            400 м., у другой 600 м.
 
     public static void main(String[] args) {
-	// write your code here
+
+        Animals dog = new Dog("Sharik");
+        Cat cat = new Cat("Barseek");
+
+        Obstacle wall = new Wall();
+        Obstacle track = new Distance();
+        Obstacle pool = new Pool();
+
+        cat.run(track);
+        cat.jump(wall);
+        cat.swim(pool);
+
+        dog.run(track);
+        dog.jump(wall);
+        dog.swim(pool);
     }
 }
