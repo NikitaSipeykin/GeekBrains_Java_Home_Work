@@ -1,6 +1,7 @@
 package ru.geekbrains.NSipeykin.lesson6;
 
 import ru.geekbrains.NSipeykin.lesson6.program.Assembler;
+import ru.geekbrains.NSipeykin.lesson6.program.KeywordSearch;
 
 public class Main {
 //TODO:
@@ -11,7 +12,9 @@ public class Main {
 // 3. * Написать программу, которая проверяет присутствует ли указанное пользователем слово в файле (работаем только с латиницей).
 //TODO:
 // 4. ** Написать метод, проверяющий, есть ли указанное слово в папке
+
     public static void main(String[] args) {
-        Assembler assembler = new Assembler();
+//        Assembler assembler = new Assembler();
+        KeywordSearch keywordSearch = new KeywordSearch();
     }
 }

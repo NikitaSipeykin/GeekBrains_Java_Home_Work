@@ -3,7 +3,6 @@ package ru.geekbrains.NSipeykin.lesson6.program;
 import java.io.*;
 
 public class Assembler {
-    InputStream in;
 
     public Assembler() {
         try {
@@ -22,5 +21,4 @@ public class Assembler {
             e.printStackTrace();
         }
     }
-
 }
