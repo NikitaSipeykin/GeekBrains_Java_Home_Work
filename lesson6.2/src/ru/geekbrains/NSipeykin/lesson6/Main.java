@@ -1,5 +1,7 @@
 package ru.geekbrains.NSipeykin.lesson6;
 
+import ru.geekbrains.NSipeykin.lesson6.program.Assembler;
+
 public class Main {
 //TODO:
 // 1. Создать 2 текстовых файла, примерно по 50-100 символов в каждом(особого значения не имеет);
@@ -10,6 +12,6 @@ public class Main {
 //TODO:
 // 4. ** Написать метод, проверяющий, есть ли указанное слово в папке
     public static void main(String[] args) {
-	// write your code here
+        Assembler assembler = new Assembler();
     }
 }
